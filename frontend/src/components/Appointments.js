@@ -25,7 +25,7 @@ const Appointments = () => {
 	useEffect(() => {
 		axios
 			.get(
-				'https://symmetrical-trout-r5xv54x5wj4h5j9r-5000.app.github.dev/appointments')
+				'https://hospital-management-app-backend.onrender.com/appointments')
 			.then(
 				response =>
 					setAppointments(response.data))
@@ -41,7 +41,7 @@ const Appointments = () => {
 
 			axios
 				.post(
-					'https://symmetrical-trout-r5xv54x5wj4h5j9r-5000.app.github.dev/appointments/add', newAppointment)
+					'https://hospital-management-app-backend.onrender.com/appointments/add', newAppointment)
 				.then(response => {
 					console.log(response.data);
 					setAppointments(
@@ -63,7 +63,7 @@ const Appointments = () => {
 			e.preventDefault();
 			axios
 				.post(
-					`https://symmetrical-trout-r5xv54x5wj4h5j9r-5000.app.github.dev/appointments/update/${id}`, selectedAppointment)
+					`https://hospital-management-app-backend.onrender.com/appointments/update/${id}`, selectedAppointment)
 				.then(response => {
 					console.log(response.data);
 					const updateApp = {
@@ -89,7 +89,7 @@ const Appointments = () => {
 		(id) => {
 			axios
 				.delete(
-					`https://symmetrical-trout-r5xv54x5wj4h5j9r-5000.app.github.dev/appointments/delete/${id}`)
+					`https://hospital-management-app-backend.onrender.com/appointments/delete/${id}`)
 				.then(response => {
 					console.log(response.data);
 					setAppointments(

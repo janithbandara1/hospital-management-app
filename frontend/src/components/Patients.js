@@ -14,7 +14,7 @@ const Patients = () => {
 
 	useEffect(
 		() => {
-			axios.get('https://symmetrical-trout-r5xv54x5wj4h5j9r-5000.app.github.dev/patients')
+			axios.get('https://hospital-management-app-backend.onrender.com/patients')
 				.then(response => setPatients(response.data))
 				.catch(error =>
 					console.error('Error fetching patients:', error));
@@ -26,7 +26,7 @@ const Patients = () => {
 			e.preventDefault();
 
 			axios.post(
-				'https://symmetrical-trout-r5xv54x5wj4h5j9r-5000.app.github.dev/patients/add', newPatient)
+				'https://hospital-management-app-backend.onrender.com/patients/add', newPatient)
 				.then(response => {
 					console.log(response.data);
 					setPatients([...patients, response.data]);
@@ -41,7 +41,7 @@ const Patients = () => {
 			e.preventDefault();
 
 			axios.post(
-				`https://symmetrical-trout-r5xv54x5wj4h5j9r-5000.app.github.dev/patients/update/${id}`, selectedPatient)
+				`https://hospital-management-app-backend.onrender.com/patients/update/${id}`, selectedPatient)
 				.then(response => {
 					const updatePat = {
 						...selectedPatient,
@@ -67,7 +67,7 @@ const Patients = () => {
 	const handleDeletePatient =
 		(id) => {
 			axios.delete(
-				`https://symmetrical-trout-r5xv54x5wj4h5j9r-5000.app.github.dev/patients/delete/${id}`)
+				`https://hospital-management-app-backend.onrender.com/patients/delete/${id}`)
 				.then(response => {
 					console.log(response.data);
 					setSelectedPatient(null);

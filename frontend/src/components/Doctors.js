@@ -23,7 +23,7 @@ const Doctors = () => {
 	useEffect(
 		() => {
 			axios
-				.get('https://symmetrical-trout-r5xv54x5wj4h5j9r-5000.app.github.dev/doctors')
+				.get('https://hospital-management-app-backend.onrender.com/doctors')
 				.then(
 					response =>
 						setDoctors(response.data))
@@ -38,7 +38,7 @@ const Doctors = () => {
 			e.preventDefault();
 			axios
 				.post(
-					'https://symmetrical-trout-r5xv54x5wj4h5j9r-5000.app.github.dev/doctors/add', newDoctor)
+					'https://hospital-management-app-backend.onrender.com/doctors/add', newDoctor)
 				.then(
 					response => {
 						console.log("doc", response.data);
@@ -64,7 +64,7 @@ const Doctors = () => {
 			e.preventDefault();
 			axios
 				.post(
-					`https://symmetrical-trout-r5xv54x5wj4h5j9r-5000.app.github.dev/doctors/update/${id}`, selectedDoctor)
+					`https://hospital-management-app-backend.onrender.com/doctors/update/${id}`, selectedDoctor)
 				.then(response => {
 					const updateDoc = {
 						...selectedDoctor,
@@ -88,7 +88,7 @@ const Doctors = () => {
 
 	const handleDeleteDoctor = (id) => {
 		axios.delete(
-			`https://symmetrical-trout-r5xv54x5wj4h5j9r-5000.app.github.dev/doctors/delete/${id}`)
+			`https://hospital-management-app-backend.onrender.com/doctors/delete/${id}`)
 			.then(response => {
 				console.log(response.data);
 				setDoctors(
